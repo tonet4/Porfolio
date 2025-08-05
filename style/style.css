@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: var(--clr2);
   }
 
   /* P A L E T A - DE - C O L O R E S */
@@ -22,10 +21,13 @@
 }
 
 @font-face {
-  font-family: "fuente";
+  font-family: "fuente2";
   src: url(../font/JustAnotherHand_Regular.ttf);
 }
 
+body {
+  background-color: var(--clr2);
+}
 .menu{
     font-size: 18px;
     color: white;
@@ -41,6 +43,14 @@
     color: var(--clr1);
 }
 
+.mainSaludo h1{
+  font-size: 68px;
+    color: white;
+    font-family: "fuente1";
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px var(--clr1);
+}
+
 .mainHome{
     display: flex;
     justify-content:space-around;
@@ -49,8 +59,37 @@
     margin-top: 70px;
 }
 
+.mainImagen {
+    position: relative;
+    z-index: 10;
+}
+
 .mainImagen img{
     width: 450px;
     border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.4);
+    z-index: 10;
+}
+
+.estrellas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.estrellas span {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.8;
+  animation: parpadeo 2s infinite alternate;
+}
+
+@keyframes parpadeo {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
 }
 

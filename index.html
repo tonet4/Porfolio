@@ -7,6 +7,8 @@
     <title>Antonio Esteban</title>
   </head>
   <body>
+    <div class="estrellas"></div>
+  
     <nav>
       <div class="menu">
         <h1>Home</h1>
@@ -19,7 +21,7 @@
     <main>
       <div class="mainHome">
         <div class="mainSaludo">
-          <h1>Hola mi nombre es Antonio</h1>
+          <h1>Hola! <br> Me llamo Antonio</h1>
           <h1>Os presento mi porfolio personal</h1>
         </div>
         <div class="mainImagen">
@@ -27,5 +29,20 @@
         </div>
       </div>
     </main>
+    <!-- Puedes ponerlo justo antes de </body> -->
+<!-- Puedes ponerlo justo antes de </body> -->
+<script>
+  const estrellas = document.querySelector('.estrellas');
+  for(let i=0; i<80; i++){
+    const star = document.createElement('span');
+    const size = Math.random() * 6 + 2; // Tamaño mayor
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.top = `${Math.random()*100}vh`;
+    star.style.left = `${Math.random()*100}vw`;
+    star.style.animationDelay = `${Math.random()*2}s`;
+    estrellas.appendChild(star);
+  }
+</script>
   </body>
 </html>
