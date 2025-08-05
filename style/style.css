@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr2);
+  }
+
+  /* P A L E T A - DE - C O L O R E S */
+
+:root {
+  --clr1: #f0811a;
+  --clr2: #103e5b;
+  --clr3: #BDE8CA;
+  --clr4: #D7C3F1;
+}
+
+  /* F U E N T E S */
+
+@font-face {
+  font-family: "fuente1";
+  src: url(../font/Bangers_Regular.ttf);
+}
+
+@font-face {
+  font-family: "fuente";
+  src: url(../font/JustAnotherHand_Regular.ttf);
+}
+
+.menu{
+    font-size: 18px;
+    color: white;
+    font-family: "fuente1";
+    display: flex;
+    gap: 15px;
+    justify-content: end;
+    padding: 15px;
+
+}
+
+.menu h1:hover{
+    color: var(--clr1);
+}
+
+.mainHome{
+    display: flex;
+    justify-content:space-around;
+    justify-items: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.mainImagen img{
+    width: 450px;
+    border-radius: 50%;
+}
+
