@@ -28,19 +28,25 @@
 body {
   background-color: var(--clr2);
 }
+
 .menu{
     font-size: 18px;
     color: white;
     font-family: "fuente1";
     display: flex;
     gap: 15px;
+    cursor: pointer;
     justify-content: end;
     padding: 15px;
-
+    /* ANIMACIÓN AÑADIDA */
+    opacity: 0;
+    animation: fadeInDown 1s ease-out 0.5s forwards;
 }
 
 .menu h1:hover{
     color: var(--clr1);
+    /* ANIMACIÓN AÑADIDA */
+    transition: all 0.3s ease;
 }
 
 .mainSaludo h1{
@@ -49,6 +55,46 @@ body {
     font-family: "fuente1";
     line-height: 1.2;
     text-shadow: 2px 2px 4px var(--clr1);
+    /* ANIMACIÓN AÑADIDA */
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1.2s ease-out 1.5s forwards;
+}
+
+.mainSaludo h1:nth-child(2) {
+    /* ANIMACIÓN AÑADIDA - Segunda línea aparece después */
+    animation-delay: 2s;
+}
+
+.iconos_home {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  /* ANIMACIÓN AÑADIDA */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInUp 1s ease-out 3s forwards;
+}
+
+.iconos_home a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.iconos_home img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  /* ANIMACIÓN AÑADIDA */
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.iconos_home img:hover {
+  /* ANIMACIÓN AÑADIDA */
+  transform: scale(1.2) rotate(5deg);
+  filter: brightness(1.3);
 }
 
 .mainHome{
@@ -62,6 +108,10 @@ body {
 .mainImagen {
     position: relative;
     z-index: 10;
+    /* ANIMACIÓN AÑADIDA */
+    opacity: 0;
+    transform: scale(0.5);
+    animation: imageEntrance 1.5s ease-out 2.5s forwards;
 }
 
 .mainImagen img{
@@ -69,6 +119,13 @@ body {
     border-radius: 50%;
     box-shadow: 0 4px 16px rgba(255, 255, 255, 0.4);
     z-index: 10;
+    /* ANIMACIÓN AÑADIDA */
+    transition: transform 0.3s ease;
+}
+
+.mainImagen img:hover {
+    /* ANIMACIÓN AÑADIDA */
+    transform: scale(1.05);
 }
 
 .estrellas {
@@ -85,7 +142,7 @@ body {
   border-radius: 50%;
   background: white;
   opacity: 0.8;
-  animation: parpadeo 2s infinite alternate;
+  animation: parpadeo 2s infinite alternate, flotar 8s infinite linear;
 }
 
 @keyframes parpadeo {
@@ -93,3 +150,91 @@ body {
   100% { opacity: 1; }
 }
 
+@keyframes flotar {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(15px) translateX(5px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* NUEVAS ANIMACIONES AÑADIDAS */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes imageEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* RESPONSIVE AÑADIDO */
+@media (max-width: 768px) {
+    .mainHome {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .mainSaludo h1 {
+        font-size: 48px;
+    }
+    
+    .mainImagen img {
+        width: 300px;
+    }
+    
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

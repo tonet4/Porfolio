@@ -18,26 +18,6 @@
       </div>
     </nav>
 
-    <main>
-      <div class="mainHome">
-        <div class="mainSaludo">
-          <h1>Hola! <br> Me llamo Antonio</h1>
-          <h1>Os presento mi porfolio personal</h1>
-          <div class="iconos_home">
-            <a href="https://github.com/tu-usuario-github" target="_blank" rel="noopener noreferrer">
-              <img src="./img/ic_git_50.svg" alt="GitHub">
-            </a>
-            <a href="https://linkedin.com/in/tu-perfil-linkedin" target="_blank" rel="noopener noreferrer">
-              <img src="./img/ic_link_50.svg" alt="LinkedIn">
-            </a>
-          </div>
-        </div>
-        <div class="mainImagen">
-          <img src="./img/foto.png" alt="fotoPerfil" />
-        </div>
-      </div>
-    </main>
-
     <script>
       const estrellas = document.querySelector('.estrellas');
       for(let i=0; i<80; i++){
@@ -48,10 +28,9 @@
         star.style.top = `${Math.random()*100}vh`;
         star.style.left = `${Math.random()*100}vw`;
         
-        // Delays diferentes para parpadeo y movimiento
         const parpadeoDelay = Math.random() * 2;
         const flotarDelay = Math.random() * 8;
-        const flotarDuration = 6 + Math.random() * 4; // Entre 6-10 segundos
+        const flotarDuration = 6 + Math.random() * 4;
         
         star.style.animation = `parpadeo 2s infinite alternate ${parpadeoDelay}s, flotar ${flotarDuration}s infinite linear ${flotarDelay}s`;
         
